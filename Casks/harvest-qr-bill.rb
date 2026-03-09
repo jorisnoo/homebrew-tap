@@ -1,6 +1,6 @@
 cask "harvest-qr-bill" do
-  version "0.4.2"
-  sha256 "083053741be1c2e183d6e9cd6df75d1869210d7145a69361cbe40f84b4933bd6"
+  version "0.4.3"
+  sha256 "4a1cf55b056662163a0e29b33d7697ca217d0d8ba225b65fd87a03a5f3b2c47e"
 
   url "https://github.com/jorisnoo/HarvestQRBill/releases/download/#{version}/HarvestQRBill-#{version}.dmg"
   name "HarvestQRBill"
