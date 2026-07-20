@@ -1,6 +1,6 @@
 cask "harvie" do
-  version "0.8.1"
-  sha256 "2b0a04fe88a42de84694aaba30d6a07a6ddcf68df95fc9320245a902f101ee5f"
+  version "0.8.2"
+  sha256 "123b833e5de60018969abb2467d924cb5dd51c937c804b40a6dea8bd3d4a1c41"
 
   url "https://github.com/jorisnoo/Harvie/releases/download/#{version}/Harvie-#{version}.dmg"
   name "Harvie"
