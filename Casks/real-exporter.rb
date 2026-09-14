@@ -1,6 +1,6 @@
 cask "real-exporter" do
-  version "0.2.0"
-  sha256 "e3f2c33c978a3c2658c5b8555815d315866f36ea3ed3170592cd5d37c83a374d"
+  version "0.2.1"
+  sha256 "d3d2e53fbc36dc91f9de884d6a4c4bf71ce78a4d7bcc8c1faceddecb9edc1e4a"
 
   url "https://github.com/jorisnoo/RealExporter/releases/download/#{version}/RealExporter-#{version}.dmg"
   name "RealExporter"
