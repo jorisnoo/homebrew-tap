@@ -14,3 +14,7 @@ brew tap jorisnoo/tap
 |----------------------------------------------------------|----------------------------------------------|-------------------------------------------|
 | [Harvie](https://github.com/jorisnoo/Harvie)             | Generate Swiss QR Bills for Harvest invoices | `brew install jorisnoo/tap/harvie`        |
 | [RealExporter](https://github.com/jorisnoo/RealExporter) | Export and convert BeReal data               | `brew install jorisnoo/tap/real-exporter` |
+
+## Maintenance
+
+See [RELEASING.md](RELEASING.md) for this repository’s release policy.
