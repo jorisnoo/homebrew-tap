@@ -1,6 +1,6 @@
 cask "gds-fm" do
-  version "0.2.5"
-  sha256 "51db215be368e3d63dee4b1d3df2066793e6aa25f4f9321134e864087c1bbf4f"
+  version "0.2.6"
+  sha256 "7589f11217e99f429b193091e757984dba8ba38577f9e6425fc563f153e4250a"
 
   url "https://github.com/jorisnoo/GDSPlayer/releases/download/#{version}/GDS.FM-#{version}.dmg"
   name "GDS.FM"
