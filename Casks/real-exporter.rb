@@ -7,8 +7,8 @@ cask "real-exporter" do
   desc "Export and convert BeReal data"
   homepage "https://github.com/jorisnoo/RealExporter"
 
-  depends_on macos: ">= :sonoma"
   auto_updates true
+  depends_on macos: :sonoma
 
   app "RealExporter.app"
 

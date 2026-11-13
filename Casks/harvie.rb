@@ -7,8 +7,8 @@ cask "harvie" do
   desc "Generate Swiss QR Bills for Harvest invoices"
   homepage "https://github.com/jorisnoo/Harvie"
 
-  depends_on macos: ">= :sonoma"
   auto_updates true
+  depends_on macos: :sonoma
 
   app "Harvie.app"
 
