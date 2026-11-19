@@ -13,8 +13,8 @@ cask "real-exporter" do
   app "RealExporter.app"
 
   zap trash: [
-    "~/Library/Application Support/app.realexporter",
-    "~/Library/Caches/app.realexporter",
-    "~/Library/Preferences/app.realexporter.plist",
+    "~/Library/Caches/ch.noordermeer.RealExporter",
+    "~/Library/HTTPStorages/ch.noordermeer.RealExporter",
+    "~/Library/Preferences/ch.noordermeer.RealExporter.plist",
   ]
 end
