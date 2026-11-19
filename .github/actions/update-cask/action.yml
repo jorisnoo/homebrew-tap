@@ -1,0 +1,22 @@
+name: Propose a released cask update
+description: Verify the producer's DMG and request a checked, squash-merged tap PR.
+inputs:
+  version:
+    description: Stable app version without a v prefix
+    required: true
+  dmg:
+    description: Path to the published DMG in the producer workspace
+    required: true
+  token:
+    description: Tap token with Contents and Pull requests read/write
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        GH_HOST: github.com
+        GH_TOKEN: ${{ inputs.token }}
+        RELEASE_VERSION: ${{ inputs.version }}
+        RELEASE_DMG: ${{ inputs.dmg }}
+      run: python3 -I "$GITHUB_ACTION_PATH/update_cask.py"

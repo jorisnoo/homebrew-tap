@@ -24,6 +24,9 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Test the producer update action
+        run: python3 -B -m unittest discover -s .github/actions/update-cask
+
       - name: Register the checked-out revision on the runner
         run: |
           brew tap jorisnoo/tap "$GITHUB_WORKSPACE"
@@ -31,6 +34,8 @@ jobs:
           brew trust --tap jorisnoo/tap
 
       - name: Check every cask and fetch the published assets
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
           brew style Casks/
           casks=()
