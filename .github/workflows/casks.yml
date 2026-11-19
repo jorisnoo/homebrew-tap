@@ -1,0 +1,46 @@
+name: Casks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  audit:
+    name: Cask audit
+    runs-on: macos-15
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_ANALYTICS: 1
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Register the checked-out revision on the runner
+        run: |
+          brew tap jorisnoo/tap "$GITHUB_WORKSPACE"
+          test "$(git -C "$(brew --repo jorisnoo/tap)" rev-parse HEAD)" = "$GITHUB_SHA"
+          brew trust --tap jorisnoo/tap
+
+      - name: Check every cask and fetch the published assets
+        run: |
+          brew style Casks/
+          casks=()
+          for file in Casks/*.rb; do
+            casks+=("jorisnoo/tap/$(basename "$file" .rb)")
+          done
+          brew audit --cask --strict --online "${casks[@]}"
+          brew fetch --cask "${casks[@]}"
+
+      - name: Verify the rename and app-owned zap paths without uninstalling
+        run: |
+          brew info --cask --json=v2 jorisnoo/tap/harvest-qr-bill jorisnoo/tap/real-exporter |
+            jq -e -f tests/renamed-casks.jq

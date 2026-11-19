@@ -13,8 +13,10 @@ cask "harvie" do
   app "Harvie.app"
 
   zap trash: [
-    "~/Library/Application Support/app.harvie",
+    "~/Library/Application Support/Harvie",
     "~/Library/Caches/app.harvie",
+    "~/Library/HTTPStorages/app.harvie",
     "~/Library/Preferences/app.harvie.plist",
+    "~/Library/WebKit/app.harvie",
   ]
 end
